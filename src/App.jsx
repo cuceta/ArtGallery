@@ -7,6 +7,7 @@ import Bio from "./pages/bioPage";
 import Gallery from "./pages/galleryPage";
 import Timeline from "./pages/timelinePage";
 import Copyright from "./pages/copyrightPage";
+import Footer from "./components/footer";
 
 
 function App() {
@@ -20,8 +21,8 @@ function App() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/timeline" element={<Timeline />} />
         <Route path="/copyright" element={<Copyright />} />
-        
       </Routes>
+      <Footer/>
     </Router>
     </>
   )

@@ -1,5 +1,6 @@
 import "../styles/bioPage.css";
 import hero from "../assets/heroBackground.png";
+import Footer from "../components/footer";
 
 const Bio = () => {
   return (
@@ -109,7 +110,7 @@ const Bio = () => {
 
         <div className="video">
             <h2>Want to know more about Yayoi Kusama?</h2>
-            
+
           <iframe
             width="1100"
             height="680"
@@ -123,6 +124,7 @@ const Bio = () => {
         </div>
 
       </div>
+      
     </>
   );
 };
