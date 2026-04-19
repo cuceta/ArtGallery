@@ -5,6 +5,7 @@ import Footer from "../components/footer";
 const Bio = () => {
   return (
     <>
+    <div className="bioPage">
       <div className="heroSection">
         <img
           src={hero}
@@ -124,7 +125,7 @@ const Bio = () => {
         </div>
 
       </div>
-      
+      </div>
     </>
   );
 };

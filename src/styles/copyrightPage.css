@@ -1,4 +1,4 @@
-h1 {
+.copyrightPage h1 {
   text-align: center;
   color: #ffe503;
   padding-top: 100px;
@@ -7,9 +7,10 @@ h1 {
   font-weight: 700;
 }
 
-p {
-    margin: 20px 150px;
+.copyrightPage p {
+  margin: 20px 150px;
   font-size: 24px;
   color: white;
   font-weight: 300;
 }
+
