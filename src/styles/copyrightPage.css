@@ -1,0 +1,15 @@
+h1 {
+  text-align: center;
+  color: #ffe503;
+  padding-top: 100px;
+  font-size: 94px;
+  font-family: "Inria Serif", serif;
+  font-weight: 700;
+}
+
+p {
+    margin: 20px 150px;
+  font-size: 24px;
+  color: white;
+  font-weight: 300;
+}
