@@ -1,0 +1,81 @@
+img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  padding-top: 100px;
+  z-index: 0;
+}
+
+.heroSection {
+  position: relative; /* Essential: pins the text to this box */
+  text-align: center;
+  color: white;
+}
+
+.text-overlay {
+  position: absolute;
+  width: 100%;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Precisely aligns the center of the text */
+  /* padding: 10px; */
+  color: white;
+  font-size: 200px;
+  font-family: "Inria Serif", serif;
+  font-weight: 700;
+}
+
+.content {
+  padding: 20px 80px;
+  background-image: url("../../public/polkaDots.png");
+}
+
+.content h1 {
+  margin-top: 60px;
+  font-size: 32px;
+  color: #ffe503;
+}
+
+.content p {
+  font-size: 24px;
+  color: white;
+  font-weight: 300;
+}
+
+p {
+  text-align: justify;
+}
+
+.rightAligned h1 {
+  justify-self: right;
+  text-align: right;
+}
+
+.leftAligned {
+  justify-content: left;
+}
+
+u {
+  text-decoration-color: red;
+}
+
+strong {
+  color: red;
+  font-weight: 700;
+}
+
+.video {
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.video h2{
+    color: #ffe503;
+    font-size: 50px;
+}
