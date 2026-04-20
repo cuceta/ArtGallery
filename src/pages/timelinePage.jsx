@@ -1,12 +1,13 @@
 import "../styles/timelinePage.css";
 
-
 const Timeline = () => {
   return (
     <>
-    <h1>Copyright</h1>
+      <div className="timelinePage">
+        <h1>Timeline</h1>
+      </div>
     </>
-  )
-}
+  );
+};
 
 export default Timeline;
