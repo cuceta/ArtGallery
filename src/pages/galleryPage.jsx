@@ -45,23 +45,22 @@ const Gallery = () => {
             ></img>
             <div className="description">
               <h3>
-                Yayoi Kusama, The Hope of the Polka Dots Buried in Infinity Will
-                Eternally Cover the Universe (2019)
+                The Hope of the Polka Dots Buried in Infinity Will Eternally
+                Cover the Universe, 2019.
               </h3>
               <p>
-                So delightful up dissimilar by unreserved it connection
-                frequently. Do an high room so in paid. Up on cousin ye dinner
-                should in. Sex stood tried walls manor truth shy and three his.
-                Their to years so child truth. Honoured peculiar families
-                sensible up likewise by on in.
+                Created in 2019, this large scale painting belongs to Kusama's
+                celebrated My Eternal Soul series, a body of work she began in
+                2009 that now numbers in the hundreds. Bold, black outlines
+                define swirling, densely packed forms across a vivid background,
+                every inch of the canvas humming with restless energy. The
+                composition leaves no room to breathe, which is precisely the
+                point.
                 <br />
                 <br />
-                Her old collecting she considered discovered. So at parties he
-                warrant oh staying. Square new horses and put better end.
-                Sincerity collected happiness do is contented. Sigh ever way now
-                many. Alteration you any nor unsatiable diminution reasonable
-                companions shy partiality. Leaf by left deal mile oh if easy.
-                Added woman first get led joy not early jokes.
+                This is not a dark vision of being swallowed by infinity, but a
+                joyful surrender to it. In her view the universe does not erase
+                us, it instead holds us, endlessly and completely.
               </p>
             </div>
           </div>
@@ -69,28 +68,32 @@ const Gallery = () => {
           <div className="artWork">
             <div className="description">
               <h3>
-                Yayoi Kusama, Infinity Mirrored Room &ndash; The Souls of
-                Millions of Light Years Away, 2013.
+                Infinity Mirrored Room &ndash; The Souls of Millions of Light
+                Years Away, 2013.
               </h3>
               <p>
-                So delightful up dissimilar by unreserved it connection
-                frequently. Do an high room so in paid. Up on cousin ye dinner
-                should in. Sex stood tried walls manor truth shy and three his.
-                Their to years so child truth. Honoured peculiar families
-                sensible up likewise by on in.
+                Created in 2013 and now one of the most sought-after museum
+                experiences in the world, this installation places visitors
+                inside a darkened chamber lined floor to ceiling with mirrors.
+                Suspended throughout the space are hundreds of small LED lights,
+                each one shifting slowly through a spectrum of color. The effect
+                is immediate, the room appears to extend outward in every
+                direction without limit.
                 <br />
                 <br />
-                Her old collecting she considered discovered. So at parties he
-                warrant oh staying. Square new horses and put better end.
-                Sincerity collected happiness do is contented. Sigh ever way now
-                many. Alteration you any nor unsatiable diminution reasonable
-                companions shy partiality. Leaf by left deal mile oh if easy.
-                Added woman first get led joy not early jokes.
+                Visitors are admitted one or two at a time, given just 45
+                seconds inside before the next person enters. That brief window
+                is intentional. Kusama wants the encounter to feel fleeting,
+                almost dreamlike. The lights suggest stars, souls, or cells; the
+                mirrors ensure they never end.
                 <br />
                 <br />
-                He as compliment unreserved projecting. Between had observe
-                pretend delight for believe. Do newspaper questions consulted
-                sweetness do.
+                The work draws directly from her lifelong experience of
+                hallucination and her philosophical preoccupation with
+                self-obliteration, a momentary dissolving of the self into
+                something vast and uncontainable. Standing inside, it becomes
+                easy to believe her. The room gives the genuine sensation of
+                infinity.
               </p>
             </div>
             <img
@@ -105,26 +108,32 @@ const Gallery = () => {
               alt="Yayoi Kusama, The Hope of the Polka Dots Buried in Infinity Will Eternally Cover the Universe (2019)"
             ></img>
             <div className="description">
-              <h3>Yayoi Kusama, Mushrooms, 2005</h3>
+              <h3>Mushrooms, 2005.</h3>
               <p>
-                So delightful up dissimilar by unreserved it connection
-                frequently. Do an high room so in paid. Up on cousin ye dinner
-                should in. Sex stood tried walls manor truth shy and three his.
-                Their to years so child truth. Honoured peculiar families
-                sensible up likewise by on in.
+                Created in 2005, Mushrooms belongs to a recurring cast of
+                organic forms that have populated Kusama's visual world for
+                decades. Rendered in her signature style, the mushrooms rise
+                from the canvas in clusters, their caps dense with dots and bold
+                black contours that pulse with the same obsessive energy found
+                across her broader practice. They are familiar yet strange,
+                natural objects pushed through her singular lens until they
+                become something otherworldly.
                 <br />
                 <br />
-                Her old collecting she considered discovered. So at parties he
-                warrant oh staying. Square new horses and put better end.
-                Sincerity collected happiness do is contented. Sigh ever way now
-                many. Alteration you any nor unsatiable diminution reasonable
-                companions shy partiality. Leaf by left deal mile oh if easy.
-                Added woman first get led joy not early jokes.
+                Mushrooms held a particular psychological resonance for Kusama
+                from early in her life. As a child in rural Japan, she reported
+                seeing the natural world around her (things like flowers, plants, and fungi
+                 ) begin to speak and vibrate with threatening energy. Painting
+                these forms was her way of confronting and neutralizing that
+                fear, pinning the vision to canvas before it could overwhelm
+                her.
+                <br />
+                <br />
+                
               </p>
             </div>
           </div>
         </div>
-        
       </div>
     </>
   );
