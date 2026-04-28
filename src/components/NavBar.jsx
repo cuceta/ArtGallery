@@ -1,5 +1,6 @@
 import "./NavBar.css";
 import { NavLink } from "react-router-dom";
+import logo from "../assets/YKlogo.svg";
 
 const NavBar = () => {
   return (
@@ -7,7 +8,7 @@ const NavBar = () => {
       <nav className="navbar">
         <ul className="navLinks">
           <li>
-            <NavLink to="/">Yayoi Kusama</NavLink>
+            <NavLink to="/"><img src={logo} alt="Yayoi Kusama logo" /></NavLink>
           </li>
         </ul>
         <ul className="navLinks">

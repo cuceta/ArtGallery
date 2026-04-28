@@ -1,5 +1,6 @@
 import "./footer.css";
 import { NavLink } from "react-router-dom";
+import logo from "../assets/YKlogo.svg";
 
 
 const Footer = () => {
@@ -8,7 +9,7 @@ const Footer = () => {
       <footer className="footer">
         <ul className="footerLinks">
           <li>
-            <NavLink to="/">Yayoi Kusama</NavLink>
+            <NavLink to="/"><img src={logo} alt="Yayoi Kusama logo" style={{color: "yellow"}} /></NavLink>
           </li>
         </ul>
         <ul className="footerLinks">

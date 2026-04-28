@@ -24,10 +24,10 @@ const Gallery = () => {
           <iframe
             width="1100"
             height="680"
-            src="https://www.youtube.com/embed/8VwJMw_fLvI?si=LE5N8SPAw8CljiLk&autoplay=1"
+            src="https://www.youtube.com/embed/8VwJMw_fLvI?si=LE5N8SPAw8CljiLk&autoplay=1&mute=1"
             title="YouTube video player"
             frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; mute"
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
           ></iframe>
