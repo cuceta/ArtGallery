@@ -4,5 +4,5 @@ body {
   background-color: black;
   font-family: "Inria Serif", serif;
   color: white;
-  background-image: url("../../public/polkaDots.png");
+  background-image: url("/polkaDots.png");
 }
