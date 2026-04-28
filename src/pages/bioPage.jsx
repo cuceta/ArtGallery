@@ -1,6 +1,5 @@
 import "../styles/bioPage.css";
 import hero from "../assets/heroBackground.png";
-import Footer from "../components/footer";
 
 const Bio = () => {
   return (

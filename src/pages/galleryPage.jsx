@@ -20,10 +20,25 @@ const Gallery = () => {
             </a>
           </button>
         </div>
+        <div className="video">
+          <iframe
+            width="1100"
+            height="680"
+            src="https://www.youtube.com/embed/8VwJMw_fLvI?si=LE5N8SPAw8CljiLk&autoplay=1"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
+        </div>
         <div>
           <h2>Best Known Works</h2>
+          <p style={{ textAlign: "center", marginBottom: "0" }}>
+            These are some of Yayoi Kusama's best known pieces
+          </p>
 
-          <div className="artWork">
+          <div className="artWork" style={{ marginTop: "50px" }}>
             <img
               src={polkaDots}
               alt="Yayoi Kusama, The Hope of the Polka Dots Buried in Infinity Will Eternally Cover the Universe (2019)"
@@ -90,9 +105,7 @@ const Gallery = () => {
               alt="Yayoi Kusama, The Hope of the Polka Dots Buried in Infinity Will Eternally Cover the Universe (2019)"
             ></img>
             <div className="description">
-              <h3>
-                Yayoi Kusama, Mushrooms, 2005
-              </h3>
+              <h3>Yayoi Kusama, Mushrooms, 2005</h3>
               <p>
                 So delightful up dissimilar by unreserved it connection
                 frequently. Do an high room so in paid. Up on cousin ye dinner
@@ -111,6 +124,7 @@ const Gallery = () => {
             </div>
           </div>
         </div>
+        
       </div>
     </>
   );

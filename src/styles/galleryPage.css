@@ -80,3 +80,12 @@
   font-size: 18px;
   text-align: left;
 }
+
+.video{
+  margin-top: 100px;
+  margin-bottom: -100px;
+}
+
+.video iframe{
+  border: white 10px solid;
+}
