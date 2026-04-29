@@ -14,3 +14,186 @@
   font-weight: 300;
 }
 
+/* ─── Sections wrapper ─── */
+.cr-sections {
+  max-width: 860px;
+  margin: 60px auto 120px;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ─── Individual accordion section ─── */
+.cr-section {
+  border: 1px solid rgba(255, 229, 3, 0.25);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+  margin-bottom: 0;
+}
+
+.cr-section--open {
+  border-color: rgba(255, 229, 3, 0.6);
+}
+
+/* ─── Accordion header button ─── */
+.cr-header {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  /* margin-bottom: 0px; */
+  gap: 12px;
+  padding: 20px 28px;
+  padding-bottom: 0;
+
+  background: rgba(255, 229, 3, 0.06);
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s ease;
+}
+
+.cr-header:hover {
+  background: rgba(255, 229, 3, 0.12);
+}
+
+.cr-section--open .cr-header {
+  background: rgba(255, 229, 3, 0.1);
+}
+
+.cr-label {
+  font-family: "Inria Serif", serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffe503;
+  flex: 1;
+}
+
+.cr-count {
+  font-family: "Inria Serif", serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.06em;
+}
+
+.cr-chevron {
+  font-size: 11px;
+  color: #ffe503;
+  opacity: 0.7;
+  transition: transform 0.3s ease;
+  margin-left: 8px;
+}
+
+/* ─── Accordion body ─── */
+.cr-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+}
+
+.cr-section--open .cr-body {
+  grid-template-rows: 1fr;
+}
+
+.cr-body > ol {
+  overflow: hidden;
+}
+
+.cr-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 28px 24px;
+  counter-reset: cite-counter;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ─── Citation item ─── */
+.cr-item {
+  counter-increment: cite-counter;
+  position: relative;
+  padding: 18px 0 18px 36px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.cr-item:last-child {
+  border-bottom: none;
+}
+
+/* Number badge */
+.cr-item::before {
+  content: counter(cite-counter);
+  position: absolute;
+  left: 0;
+  top: 20px;
+  width: 22px;
+  height: 22px;
+  background: #ffe503;
+  color: #000;
+  font-family: "Inria Serif", serif;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 22px;
+  text-align: center;
+}
+
+.cr-cite-text {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.cr-link {
+  font-size: 13px;
+  color: #ffe503;
+  opacity: 0.75;
+  word-break: break-all;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.cr-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 700px) {
+  .copyrightPage h1 {
+    font-size: 52px;
+    padding-top: 60px;
+  }
+
+  .copyrightPage p {
+    margin: 20px 24px;
+    font-size: 18px;
+  }
+
+  .cr-sections {
+    padding: 0 16px;
+    margin-top: 40px;
+  }
+
+  .cr-header {
+    padding: 16px 20px;
+  }
+
+  .cr-label {
+    font-size: 18px;
+  }
+
+  .cr-list {
+    padding: 0 20px 20px;
+  }
+}
