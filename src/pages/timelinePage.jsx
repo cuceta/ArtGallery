@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "../styles/timelinePage.css";
 // import phallisField from "/phallisField.jpg"
 
@@ -107,7 +107,8 @@ const events = [
     type: "artistic",
     badge: "performance",
     image: "/timelineArt/1966.jpg",
-    caption: "Yayoi Kusama, Narcissus Garden, 1966, installed in Venice Biennale, Italy, 1966",
+    caption:
+      "Yayoi Kusama, Narcissus Garden, 1966, installed in Venice Biennale, Italy, 1966",
     title: "Narcissus Garden at the Venice Biennale",
     description:
       "Without an official invitation, she places 1,500 mirrored spheres on the lawn of the Italian Pavilion and attempts to sell them for $2 each. The Biennale organisers expel her. The work is now considered one of the most iconic conceptual art gestures of the era.",
@@ -241,7 +242,8 @@ const events = [
     type: "artistic",
     badge: "installation",
     image: "/timelineArt/2017.jpg",
-    caption: "Yayoi Kusama, Mirrored Room—The Souls of Millions of Light Years Away (2013)",
+    caption:
+      "Yayoi Kusama, Mirrored Room—The Souls of Millions of Light Years Away (2013)",
     title: "Infinity Mirrors exhibition at Hirshhorn Museum",
     description:
       "Six infinity mirror rooms displayed together for the first time. Timed tickets sell out instantly nationwide. It becomes one of the defining cultural events of the decade and a social media phenomenon.",
@@ -261,7 +263,8 @@ const events = [
     type: "artistic",
     badge: "exhibition",
     image: "/timelineArt/2022.jpg",
-    caption: "Yayoi Kusama and Louis Vuitton Second collaboration, Infinity Dot bags for infinite possibilities.",
+    caption:
+      "Yayoi Kusama and Louis Vuitton Second collaboration, Infinity Dot bags for infinite possibilities.",
     title: "Second Louis Vuitton collaboration, age 93",
     description:
       "Louis Vuitton launches another global Kusama takeover featuring robotic 'Kusama' figures painting in store windows worldwide. It dominates global fashion coverage and demonstrates her sustained cultural vitality.",
@@ -287,6 +290,16 @@ const BADGE_LABELS = {
 };
 
 const Timeline = () => {
+  const [showTop, setShowTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setShowTop(window.scrollY > 400);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
   const itemRefs = useRef([]);
 
   useEffect(() => {
@@ -310,6 +323,14 @@ const Timeline = () => {
 
   return (
     <div className="timelinePage">
+      <button
+        className={`tl-top-btn ${showTop ? "tl-top-btn--visible" : ""}`}
+        onClick={scrollToTop}
+        aria-label="Back to top"
+      >
+        ↑ Top
+      </button>
+
       <h1>Timeline</h1>
 
       <div className="tl-legend">
