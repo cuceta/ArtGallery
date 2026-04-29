@@ -290,6 +290,44 @@ const BADGE_LABELS = {
 };
 
 const Timeline = () => {
+  // Audio logic
+  const [playing, setPlaying] = useState(false);
+  const audioRef = useRef(null);
+  const scrollIntervalRef = useRef(null);
+  const [scrolling, setScrolling] = useState(false);
+
+  const toggleMusic = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    playing ? audio.pause() : audio.play();
+    setPlaying(!playing);
+  };
+
+  const startAutoScroll = () => {
+    if (scrolling) {
+      clearInterval(scrollIntervalRef.current);
+      setScrolling(false);
+      return;
+    }
+    setScrolling(true);
+    scrollIntervalRef.current = setInterval(() => {
+      const atBottom =
+        window.innerHeight + window.scrollY >= document.body.scrollHeight - 10;
+      if (atBottom) {
+        clearInterval(scrollIntervalRef.current);
+        setScrolling(false);
+      } else {
+        window.scrollBy({ top: 3, behavior: "instant" });
+      }
+    }, 16);
+  };
+
+  // clean up interval on unmount
+  useEffect(() => {
+    return () => clearInterval(scrollIntervalRef.current);
+  }, []);
+
+  // To top button logic
   const [showTop, setShowTop] = useState(false);
 
   useEffect(() => {
@@ -300,6 +338,7 @@ const Timeline = () => {
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
+  // Scrolling animation on timeline events
   const itemRefs = useRef([]);
 
   useEffect(() => {
@@ -332,6 +371,30 @@ const Timeline = () => {
       </button>
 
       <h1>Timeline</h1>
+      <div className="tl-controls">
+        <audio ref={audioRef} src="/music/background.mp3" loop />
+        <button
+          className={`tl-ctrl-btn ${playing ? "active" : ""}`}
+          onClick={toggleMusic}
+        >
+          {playing ? "♪ Pause Music" : "♪ Play Music"}
+        </button>
+        <button
+          className="tl-ctrl-btn"
+          onClick={startAutoScroll}
+          disabled={scrolling}
+        >
+          ↓ Auto Scroll
+        </button>
+      </div>
+
+      {/* Fixed stop button — only visible while scrolling */}
+      <button
+        className={`tl-stop-btn ${scrolling ? "tl-stop-btn--visible" : ""}`}
+        onClick={startAutoScroll}
+      >
+        ◼ Stop Scroll
+      </button>
 
       <div className="tl-legend">
         <div className="legend-item">
