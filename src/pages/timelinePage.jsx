@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "../styles/timelinePage.css";
 // import phallisField from "/phallisField.jpg"
+// import backgroundMusic from "../../public/music/background.mp3";
 
 const events = [
   {
