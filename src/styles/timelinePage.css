@@ -6,3 +6,326 @@
   font-family: "Inria Serif", serif;
   font-weight: 700;
 }
+
+/* ─── Legend ─── */
+.tl-legend {
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+  margin: 24px auto 72px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.legend-swatch {
+  display: inline-block;
+  width: 32px;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.personal-swatch {
+  background: green;
+  box-shadow: 0 0 8px rgba(26, 255, 72, 0.5);
+}
+
+.artistic-swatch {
+  background: #e3222a;
+  box-shadow: 0 0 8px rgba(227, 34, 42, 0.5);
+}
+
+.legend-label {
+  font-family: "Inria Serif", serif;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 0.03em;
+}
+
+/* ─── Timeline container ─── */
+.tl-container {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px 120px;
+  /* Prevent the connector lines from causing horizontal scroll */
+  overflow: hidden;
+}
+
+/* Vertical spine */
+.tl-spine {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateX(-50%);
+}
+
+/* ─── Individual timeline item ─────────────────────────────────────
+   Strategy: each item is full-width with box-sizing: border-box.
+   Left items get padding-right that pushes the card into the left half.
+   Right items get padding-left that pushes the card into the right half.
+   The gap to the spine (36px) is baked into those paddings.
+   The dot connector is position:absolute at left:50% of the item,
+   which equals the spine position — no overflow possible.
+──────────────────────────────────────────────────────────────────── */
+.tl-item {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 48px;
+
+  /* Scroll-in animation — starts hidden */
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.tl-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Card in the LEFT half — padding pushes it away from the spine */
+.tl-item.left {
+  padding-right: calc(50% + 36px);
+}
+
+/* Card in the RIGHT half — padding pushes it away from the spine */
+.tl-item.right {
+  padding-left: calc(50% + 36px);
+}
+
+/* Light stagger on first few items */
+.tl-item:nth-child(2) { transition-delay: 0.04s; }
+.tl-item:nth-child(3) { transition-delay: 0.07s; }
+.tl-item:nth-child(4) { transition-delay: 0.05s; }
+.tl-item:nth-child(5) { transition-delay: 0.08s; }
+
+/* ─── Card ─── */
+.tl-card {
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 20px 24px;
+  position: relative;
+  /* border side facing the spine is set per-side below */
+}
+
+/* Left card: colored border on the right (spine-facing) side */
+.tl-item.left .tl-card {
+  border-right: 4px solid transparent;
+}
+
+/* Right card: colored border on the left (spine-facing) side */
+.tl-item.right .tl-card {
+  border-left: 4px solid transparent;
+}
+
+.tl-item.personal .tl-card {
+  border-color: green;
+  box-shadow: 0 2px 20px rgba(26, 255, 26, 0.09);
+}
+
+.tl-item.artistic .tl-card {
+  border-color: #e3222a;
+  box-shadow: 0 2px 20px rgba(227, 34, 42, 0.09);
+}
+
+/* Horizontal connector line from card edge to the dot */
+.tl-item.left .tl-card::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -36px;
+  width: 36px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.tl-item.right .tl-card::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -36px;
+  width: 36px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* ─── Card header: year + badge ─── */
+.tl-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.tl-year {
+  font-family: "Inria Serif", serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.tl-item.personal .tl-year { color: green; }
+.tl-item.artistic .tl-year { color: #e3222a; }
+
+/* ─── Badges ─── */
+.tl-badge {
+  display: inline-block;
+  font-family: "Inria Serif", serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 20px;
+}
+
+.badge-painting {
+  background: #fff3cd;
+  color: #7a5c00;
+}
+
+.badge-installation {
+  background: #e8f4fd;
+  color: #0a4a7a;
+}
+
+.badge-performance {
+  background: #fce8f0;
+  color: #7a1040;
+}
+
+.badge-award {
+  background: #e8f8f0;
+  color: #0a5c2e;
+}
+
+.badge-exhibition {
+  background: #f0ecff;
+  color: #3a1a8a;
+}
+
+/* ─── Card text ─── */
+.tl-title {
+  font-family: "Inria Serif", serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+
+.tl-desc {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 13px;
+  color: #444;
+  line-height: 1.7;
+}
+
+/* ─── Connector dot — pinned exactly on the spine ─── */
+.tl-connector {
+  position: absolute;
+  /* left:50% on a box-sizing:border-box full-width item
+     resolves to the true center of the container — the spine */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.tl-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.tl-item.personal .tl-dot {
+  background: green;
+  box-shadow: 0 0 0 3px rgba(57, 255, 26, 0.22);
+}
+
+.tl-item.artistic .tl-dot {
+  background: #e3222a;
+  box-shadow: 0 0 0 3px rgba(227, 34, 42, 0.22);
+}
+
+.tl-figure {
+  margin: 14px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid #eee;
+}
+
+.tl-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+
+.tl-caption {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 11.5px;
+  color: #888;
+  font-style: italic;
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+/* ─── Responsive: single column ─── */
+@media (max-width: 700px) {
+  .timelinePage h1 {
+    font-size: 52px;
+    padding-top: 60px;
+  }
+
+  .tl-spine {
+    left: 20px;
+    transform: none;
+  }
+
+  .tl-item.left,
+  .tl-item.right {
+    padding-left: 52px;
+    padding-right: 0;
+  }
+
+  .tl-connector {
+    left: 20px;
+    top: 28px;
+    transform: translate(-50%, 0);
+  }
+
+  /* Hide the horizontal line in single-column mode */
+  .tl-item.left .tl-card::after,
+  .tl-item.right .tl-card::after {
+    display: none;
+  }
+
+  /* All cards border on the left in single-column */
+  .tl-item.left .tl-card,
+  .tl-item.right .tl-card {
+    border-left: 4px solid transparent;
+    border-right: none;
+  }
+
+  .tl-item.left.personal .tl-card,
+  .tl-item.right.personal .tl-card {
+    border-color: green;
+  }
+
+  .tl-item.left.artistic .tl-card,
+  .tl-item.right.artistic .tl-card {
+    border-color: #e3222a;
+  }
+}
